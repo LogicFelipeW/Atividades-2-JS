@@ -1,10 +1,9 @@
 let num = (parseFloat (prompt('Digite seu número:')))
-let i = 1 
 let mult
 
-while(i < 10){
+for(let i = 0;i <= 10; i++){
     mult = num*i
     console.log(mult)
-    i++
+    
 }
 

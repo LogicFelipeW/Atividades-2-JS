@@ -1,12 +1,8 @@
-let num = 1
-
-while (num <= 9){
-    let i = 1
+for (let num = 0; num <= 9; num++){
     
-    while (i <= 10){
+    for(let i = 0; i <= 10; i++){
         console.log(num*i)
-        i++
+        
     }
     console.log('')
-    num ++
 }

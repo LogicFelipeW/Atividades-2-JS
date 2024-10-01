@@ -1,14 +1,14 @@
 let fatorial = 1
-let num = prompt('Digite um número inteiro: ')
+let num = prompt('Digite um número (não pode ser negativo): ')
 
 if (num < 0) {
-    alert('Não é permitido para números negativos!');
+    alert('Não é permitido números negativos!');
 } else{
-    let i = 1
    
-    while (i <= num) {
+   
+    for( let i = 1;i <= num; i++) {
         fatorial = fatorial * i
-        i++
+        
     }
     alert('O fatorial é: ' + fatorial)
 }

@@ -1,39 +1,40 @@
 let continuar = true
-let alturaMaisJovem = 0
-let pesoMaisVelho = 0
-let idadeMaisJovem = Infinity
-let idadeMaisVelho = -Infinity
-let somaIdades = 0
-let totalPessoas = 0
+let menoridade = 200
+let alturajovem = 0
+let maioridade = 0
+let maiorpeso= 0
+let total = 0
+let idades = 0
 
-while (continuar) {
+while(continuar){
 
-    let idade = prompt('Digite a idade:') * 1
-    let altura = prompt('Digite a altura (em metros):') * 1
-    let peso = prompt('Digite o peso (em kg):') * 1
+    let altura = parseFloat(prompt('Digite a altura da pessoa: '))
+    let peso = parseFloat(prompt('Digite o peso da pessoa: '))
+    let idade = parseFloat(prompt('Digite a idade da pessoa'))
+
+    idades += idade
     
-   
-    somaIdades += idade
-    totalPessoas++
-    
-    if (idade < idadeMaisJovem) {
-        idadeMaisJovem = idade
-        alturaMaisJovem = altura 
+    total++
+
+    if(menoridade > idade){
+        menoridade = idade
+        alturajovem = altura
     }
-
     
-    if (idade > idadeMaisVelho) {
-        idadeMaisVelho = idade
-        pesoMaisVelho = peso
-    }
+    if(maioridade < idade){
+        maioridade = idade
+        maiorpeso = peso
 
-   
-    continuar = confirm('Deseja inserir dados de outra pessoa? (OK para Sim, Cancelar para Não)')
+    }
+    
+
+    continuar = confirm('Deseja cadastrar outra pessoa? (0 para cancelar)')
+    
 }
 
-let mediaIdades = somaIdades / totalPessoas
+    let mediaIdades = idades / total
+    alert (` A altura da pessoa mais jovem é : ${alturajovem}`)
+    alert (` O peso da pessoa mais velha é : ${maiorpeso}`)
+    alert (` A média da idade das pessoas é : ${mediaIdades}`)
 
 
-alert('Altura da pessoa mais jovem: ' + alturaMaisJovem)
-alert('Peso da pessoa mais velha: ' + pesoMaisVelho )
-alert('Média de idades: ' + mediaIdades.toFixed(2))
